@@ -10,6 +10,5 @@ RSpec.configure do |config|
     DB.exec("DELETE FROM lines *;")
     DB.exec("DELETE FROM stations *;")
     DB.exec("DELETE FROM stops *;")
-    DB.exec("DELETE FROM bathrooms *;")
   end
 end
