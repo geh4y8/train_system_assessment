@@ -6,7 +6,11 @@ DB = PG.connect({:dbname => 'train_system'})
 
 def main_menu
 	loop do
-		puts "WELCOME TO CHOO CHOO TOWN"
+	puts "                               `      "
+  puts "  _____    _____    _____    ___`__|  "
+  puts " |_@_@_|==|_@_@_|==|_@_@_|==|_@___@_} "
+  puts "                                      "
+	puts "------  WELCOME TO CHOO CHOO TOWN!  ------"
 		puts "Press 'a' to add a station"
 		puts "Press 'l' to list all stations"
 		puts "Press 'i' to add a line"
