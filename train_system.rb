@@ -60,4 +60,10 @@ def add_station
 	main_menu
 end
 
+def list_stations
+	puts "Here are all the stations:"
+	Station.all.each { |station| puts station.name}
+	main_menu
+end
+
 main_menu
