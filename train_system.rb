@@ -48,4 +48,16 @@ def list_lines
 	main_menu
 end
 
+def add_station
+	list_lines
+	puts "What line is the station located on?"
+	line = Line.find_line(gets.chomp)
+	puts "What is the name of the station?"
+	input = gets.chomp
+	station = Station.new({:name => input})
+	station.save
+	line.add_station(station.id)
+	main_menu
+end
+
 main_menu
