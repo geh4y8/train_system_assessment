@@ -42,4 +42,10 @@ def add_line
 	main_menu
 end
 
+def list_lines
+	puts "Here are all the lines:"
+	Line.all.each { |line| puts line.name }
+	main_menu
+end
+
 main_menu
