@@ -75,4 +75,12 @@ def list_stations_by_line
 	main_menu
 end
 
+def list_lines_by_station
+	list_stations
+	puts "Which station would you like to check out?"
+	station = Station.find_station(gets.chomp)
+	Line.line_list(station.id).each {|line| puts line.name}
+	main_menu
+end
+
 main_menu
