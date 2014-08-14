@@ -66,4 +66,13 @@ def list_stations
 	main_menu
 end
 
+def list_stations_by_line
+	list_lines
+	puts "Which line would you like to see stations for?"
+	line = Line.find_line(gets.chop)
+	stations = Station.stop_list(line.id)
+	stations.each { |station| puts station.name}
+	main_menu
+end
+
 main_menu
