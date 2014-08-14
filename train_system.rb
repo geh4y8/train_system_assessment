@@ -1,0 +1,45 @@
+require './lib/station'
+require './lib/line'
+require 'pg'
+
+DB = PG.connect({:dbname => 'train_system'})
+
+def main_menu
+	loop do
+		puts "WELCOME TO CHOO CHOO TOWN"
+		puts "Press 'a' to add a station"
+		puts "Press 'l' to list all stations"
+		puts "Press 'i' to add a line"
+		puts "Press 't' to see all lines"
+		puts "Press 'p' to view all stations on a line"
+		puts "Press 'o' to view all lines that go to a station"
+		input = gets.chomp 
+		case input
+		when 'a'
+			add_station
+		when 'l'
+			list_stations
+		when 'i'
+			add_line
+		when 't'
+			list_lines
+		when 'p'
+			list_stations_by_line
+		when 'o'
+			list_lines_by_station
+		when 'e'
+			exit
+		end
+	end
+end
+
+def add_line
+	puts "What line would you like to add?"
+	input = gets.chomp
+	new_line = Line.new({:name => input})
+	new_line.save
+	puts "#{input} line added!"
+	main_menu
+end
+
+main_menu
